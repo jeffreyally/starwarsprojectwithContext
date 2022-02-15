@@ -9,7 +9,7 @@ import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
-import { Carddeck } from "./component/carddeck";
+
 
 //create your first component
 function Layout() {
