@@ -21,7 +21,7 @@ export const Home = () => {
 	const [arrayOfCharacters, setArrayOfCharacters] = useState([]);
 
 	useEffect(() => {
-		//getCharacters();
+		getCharacters();
 		getPlanets();
 	}
 		, []);
@@ -34,14 +34,30 @@ export const Home = () => {
 			return response.json();
 		})
 		.then((jsonresponse)=> {
-			console.log(jsonresponse)
+			
 			setArrayOfPlanets(jsonresponse.results)
 			
 			
 		})
 	}
 
-	console.log(arrayOfPlanets)
+	const getCharacters = () => {
+		
+		fetch("https://swapi.dev/api/people/")
+		.then((response) => {
+			
+			return response.json();
+		})
+		.then((jsonresponse)=> {
+			
+			setArrayOfCharacters(jsonresponse.results)
+			
+			
+		})
+	}
+
+	console.log(arrayOfCharacters)
+	console.log (arrayOfPlanets)
 
 
 return(
