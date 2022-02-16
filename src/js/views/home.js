@@ -61,8 +61,11 @@ export const Home = () => {
 
 
 return(
-	<div className="text-center mt-5">
-
-	</div>
+	<>
+	<h1>Characters</h1>
+	<Card type="characters" characters={arrayOfCharacters}/>
+	<h1>Planets</h1>
+	<Card type="planets" planets={arrayOfPlanets}/>
+	</>
 	);
 };
