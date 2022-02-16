@@ -7,8 +7,12 @@ import { Context } from "../store/appContext";
 
 
 export const Card = (props) => {
-    const sprops = {...props.planets}
-    console.log(sprops[0])
+    
+    const planetprops = {...props.planets}
+    const characterprops = {...props.characters}
+    console.log(planetprops[0])
+    console.log(characterprops[0])
+    
 
     return (
     <div className="card" style={{width: '18rem'}}>
