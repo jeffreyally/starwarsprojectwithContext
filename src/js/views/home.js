@@ -63,9 +63,10 @@ export const Home = () => {
 return(
 	<>
 	<h1>Characters</h1>
-	<Card type="characters" characters={arrayOfCharacters}/>
+	<Card type="Character" characters={arrayOfCharacters}/>
+	
 	<h1>Planets</h1>
-	<Card type="planets" planets={arrayOfPlanets}/>
+	
 	</>
 	);
 };
