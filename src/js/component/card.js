@@ -26,7 +26,8 @@ export const Card = (props) => {
 
     return (
         <div className = 'flex'>
-        <>{a.map((item)=>{
+        
+        {props.type == "Character" ? a.map((item)=>{
 
             return (
            
@@ -42,10 +43,12 @@ export const Card = (props) => {
             </div>
             </div>
             )
-        })
+        }):<span></span>
+        
+
  
 }
-</>
+
 </div>
     )
 }
