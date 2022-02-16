@@ -44,11 +44,8 @@ export const Card = (props) => {
             </div>
             )
         }):<span></span>
-        
-
- 
-}
-
+        }
+{props.type == "Planet" ? true:<h1>Get to work here for the planets section of the home view</h1>}
 </div>
     )
 }
