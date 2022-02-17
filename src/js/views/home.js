@@ -64,8 +64,9 @@ return(
 	<>
 	<h1>Characters</h1>
 	<Card type="Character" characters={arrayOfCharacters}/>
-	
+	<br></br>
 	<h1>Planets</h1>
+	<Card type="Planet" planets={arrayOfPlanets}/>
 	
 	</>
 	);

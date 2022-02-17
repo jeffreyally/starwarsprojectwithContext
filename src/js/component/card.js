@@ -6,19 +6,14 @@ import { Context } from "../store/appContext";
 
 
 
-export const Card = (props) => {
+export const Card = ({ type, characters, planets }) => {
+  
+    console.log(type)
+    console.log(characters)
+    console.log(planets)
     
-    
-    
-   let a = [...props.characters]
-   let b;
+  
 
-   
-
-   a.map((item)=>{
-    console.log(item)
-    return item
-})
     
     
     
@@ -27,14 +22,14 @@ export const Card = (props) => {
     return (
         <div className = 'flex'>
         
-        {props.type == "Character" ? a.map((item)=>{
+        {type == "Character" ? characters.map((item)=>{
 
             return (
            
             <div className="card" style={{width: '18rem'}}>
-            <img className="card-img-top" src="https://lumiere-a.akamaihd.net/v1/images/og-generic_02031d2b.png?region=0%2C0%2C1200%2C1200" alt="Card image cap" />
+            <img className="card-img-top" src='https://static3.srcdn.com/wordpress/wp-content/uploads/2020/02/chewbacca-loreal-meme-Edited-1.jpg?q=50&fit=crop&w=480&h=300&dpr=1.5' alt="Card image cap" />
             <div className="card-body">
-                <h5 className="card-title">{props.type}</h5>
+                <h5 className="card-title">{type}</h5>
                 <p className="card-text">
                     <p>{item.name}</p>
                     
@@ -43,9 +38,27 @@ export const Card = (props) => {
             </div>
             </div>
             )
-        }):<span></span>
+        }):null
         }
-{props.type == "Planet" ? true:<h1>Get to work here for the planets section of the home view</h1>}
+{type == "Planet" ? planets.map((item)=>{
+
+return (
+
+<div className="card" style={{width: '18rem'}}>
+<img className="card-img-top" src='https://wallpaperaccess.com/full/1251069.jpg' alt="Card image cap" />
+<div className="card-body">
+    <h5 className="card-title">{type}</h5>
+    <p className="card-text">
+        <p>{item.name}</p>
+        
+    </p>
+    <a href="#" className="btn btn-primary">Go somewhere</a>
 </div>
-    )
+</div>
+)
+}):null
+    
 }
+
+</div>
+)}
