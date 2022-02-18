@@ -1,6 +1,7 @@
 import React from "react";
 
 export const GetDetailsViewForCharacters = (props) => {
+    console.log(props.location.state)
 //props.location.state shows us our array of character objects
 //props.match.params.ID is a string of the url we chose.
 //above is string of url
@@ -20,7 +21,7 @@ console.log(currentcharacter)
       <div className="card mb-3 mx-auto">
         <div className="row g-0">
           <div className="col-md-4">
-            <img src='' className="fit" alt="..." />
+            <img src={props.location.state[10]} className="fit" alt="..." />
           </div>
           <div className="col-md-8">
             <div className="card-body">

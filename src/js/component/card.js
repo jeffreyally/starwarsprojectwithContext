@@ -14,7 +14,7 @@ export const Card = ({ type, characters, planets }) => {
     
   
 
-    
+    let imgsrc = ['https://static3.srcdn.com/wordpress/wp-content/uploads/2020/02/chewbacca-loreal-meme-Edited-1.jpg?q=50&fit=crop&w=480&h=300&dpr=1.5']
     
     
     
@@ -37,7 +37,8 @@ export const Card = ({ type, characters, planets }) => {
                 <Link
                     to={{
                         pathname: `getdetailsviewforcharacters/${item.name}`,
-                        state: characters
+                        state: characters.concat(imgsrc)
+                        
                     }}
                 ><button className="btn btn-primary">Learn More</button></Link>
             </div>
