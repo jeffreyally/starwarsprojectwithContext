@@ -8,8 +8,8 @@ import { Context } from "../store/appContext";
 
 export const Card = ({ type, characters, planets }) => {
   
-    console.log(type)
-    console.log(characters)
+    //console.log(type)
+    //console.log(characters)
     //console.log(planets)
     
   

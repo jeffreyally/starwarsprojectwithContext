@@ -56,8 +56,8 @@ export const Home = () => {
 		})
 	}
 
-	console.log(arrayOfCharacters)
-	console.log (arrayOfPlanets)
+	//console.log(arrayOfCharacters)
+	//console.log (arrayOfPlanets)
 
 
 return(

@@ -1,8 +1,21 @@
 import React from "react";
 
 export const GetDetailsViewForCharacters = (props) => {
+//props.location.state shows us our array of character objects
+//props.match.params.ID is a string of the url we chose.
+//above is string of url
 
+for(let characters of props.location.state){
+    console.log(characters.name)
+}
 
+let currentcharacter = props.location.state.filter((characterobject) =>{
+
+    return characterobject.name == props.match.params.ID
+
+})
+
+console.log(currentcharacter)
     
   return (
     <div className="container">
