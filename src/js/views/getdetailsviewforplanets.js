@@ -1,20 +1,19 @@
 import React from "react";
 
-export const GetDetailsViewForCharacters = (props) => {
+export const GetDetailsViewForPlanets = (props) => {
     console.log(props.location.state)
-//props.location.state shows us our array of character objects
+//props.location.state shows us our array of character or planet objects
 //props.match.params.ID is a string of the url we chose.
 //above is string of url
+  
 
+let currentplanet = props.location.state.filter((characterobject) =>{
 
-
-let currentcharacter = props.location.state.filter((characterobject) =>{
-
-    return characterobject.name == props.match.params.ID
+ return characterobject.name == props.match.params.ID
 
 })
 
-//console.log(currentcharacter)
+ console.log(currentplanet)
     
   return (
     <div className="container">
@@ -25,9 +24,9 @@ let currentcharacter = props.location.state.filter((characterobject) =>{
           </div>
           <div className="col-md-8">
             <div className="card-body">
-              <h5 className="card-title">{currentcharacter[0].name}</h5>
-              <p className="card-text">{`Birth Year: ` + currentcharacter[0].birth_year}<br></br>{`Height: ` + currentcharacter[0].height+`cm`}<br></br>
-              {`Number of Film Appearances: ` + currentcharacter[0].films.length}
+              <h5 className="card-title">{currentplanet[0].name}</h5>
+              <p className="card-text">{`Gravity: ` + currentplanet[0].gravity}<br></br>{`Climate: ` + currentplanet[0].climate}<br></br>
+              {`Population: ` + currentplanet[0].population}
               </p>
               <ul className="d-flex flex-column">
                
