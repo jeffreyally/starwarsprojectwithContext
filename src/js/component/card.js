@@ -10,7 +10,7 @@ export const Card = ({ type, characters, planets }) => {
   
     console.log(type)
     console.log(characters)
-    console.log(planets)
+    //console.log(planets)
     
   
 
@@ -34,7 +34,12 @@ export const Card = ({ type, characters, planets }) => {
                     <p>{item.name}</p>
                     
                 </p>
-                <a href="#" className="btn btn-primary">Go somewhere</a>
+                <Link
+                    to={{
+                        pathname: `getdetailsviewforcharacters/${item.name}`,
+                        state: characters
+                    }}
+                ><button className="btn btn-primary">Learn More</button></Link>
             </div>
             </div>
             )
