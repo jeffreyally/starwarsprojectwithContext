@@ -5,9 +5,7 @@ export const GetDetailsViewForCharacters = (props) => {
 //props.match.params.ID is a string of the url we chose.
 //above is string of url
 
-for(let characters of props.location.state){
-    console.log(characters.name)
-}
+
 
 let currentcharacter = props.location.state.filter((characterobject) =>{
 
@@ -26,8 +24,10 @@ console.log(currentcharacter)
           </div>
           <div className="col-md-8">
             <div className="card-body">
-              <h5 className="card-title">needs a name and img src</h5>
-              <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <h5 className="card-title">{currentcharacter[0].name}</h5>
+              <p className="card-text">{`Birth Year: ` + currentcharacter[0].birth_year}<br></br>{`Height: ` + currentcharacter[0].height+`cm`}<br></br>
+              {`Number of Film Appearances: ` + currentcharacter[0].films.length}
+              </p>
               <ul className="d-flex flex-column">
                
               </ul>
