@@ -6,6 +6,7 @@ import { Home } from "./views/home";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
+import {GetDetailsViewForCharacters} from "./views/getdetailsviewforcharacters.js";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
@@ -31,6 +32,7 @@ function Layout() {
 
 
 						<Route exact path="/single/:theid" component={Single} />
+						<Route exact path="/getdetailsviewforcharacters/:ID" component={GetDetailsViewForCharacters}/>
 
 
 						<Route>
