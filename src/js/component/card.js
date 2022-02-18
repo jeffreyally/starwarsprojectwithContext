@@ -34,7 +34,7 @@ export const Card = ({ type, characters, planets }) => {
                       state: characters.concat(chewbaccaimg),
                     }}
                   >
-                    <button className="btn btn-primary">Learn More</button>
+                    <button className="btn btn-primary">Get Details</button>
                   </Link>
                 </div>
               </div>
@@ -63,7 +63,7 @@ export const Card = ({ type, characters, planets }) => {
                       state: planets.concat(planetimage),
                     }}
                   >
-                    <button className="btn btn-primary">Learn More</button>
+                    <button className="btn btn-primary">Get Details</button>
                   </Link>
                 </div>
               </div>
