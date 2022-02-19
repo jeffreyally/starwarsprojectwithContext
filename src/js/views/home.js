@@ -56,7 +56,7 @@ export const Home = () => {
               value1: character.hair_color,
               value2: character.eye_color,
               value3: character.gender,
-              starwarsobject: character,
+            objectFromMap: character,
             }}
           />
         );
@@ -80,7 +80,7 @@ export const Home = () => {
               value1: planet.gravity,
               value2: planet.climate,
               value3: planet.orbital_period,
-              starwarsobject: planet,
+              objectFromMap: planet,
             }}
           />
         );
