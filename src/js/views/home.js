@@ -40,12 +40,53 @@ export const Home = () => {
   return (
     <>
       <h1>Characters</h1>
-	  {arrayOfCharacters.map((character,index)=> {
-
-     return <Card type="Character" character={character} key={index} />})}
+      <div className="flex">
+      {arrayOfCharacters.map((character, index) => {
+        return (
+          <Card
+            type="Character"
+            key={index}
+            cardData={{
+              name: character.name,
+              imgURL:
+                "https://static3.srcdn.com/wordpress/wp-content/uploads/2020/02/chewbacca-loreal-meme-Edited-1.jpg?q=50&fit=crop&w=480&h=300&dpr=1.5",
+                prop1: `Hair Color`,
+                prop2: `Eye Color`,
+                prop3: `Gender`,
+              value1: character.hair_color,
+              value2: character.eye_color,
+              value3: character.gender,
+              starwarsobject: character,
+            }}
+          />
+        );
+      })}
+     </div>
       <br></br>
       <h1>Planets</h1>
-      <Card type="Planet" planets={arrayOfPlanets} />
+      <div className="flex">
+      {arrayOfPlanets.map((planet, index) => {
+        return (
+          <Card
+            type="Planet"
+            key={index}
+            cardData={{
+              name: planet.name,
+
+              imgURL: "https://wallpaperaccess.com/full/1251069.jpg",
+              prop1: `Gravity`,
+              prop2: `Climate`,
+              prop3: `Orbital Period`,
+              value1: planet.gravity,
+              value2: planet.climate,
+              value3: planet.orbital_period,
+              starwarsobject: planet,
+            }}
+          />
+        );
+      })}
+      </div>
     </>
   );
 };
+ 
