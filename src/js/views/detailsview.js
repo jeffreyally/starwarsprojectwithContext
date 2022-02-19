@@ -1,7 +1,7 @@
 import React from "react";
 
 export const DetailsView = (props) => {
- console.log(props)
+ console.log(props.location.state)
   return(
 <>
     <h1>

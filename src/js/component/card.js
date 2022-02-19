@@ -4,13 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 //ad state to linkpath
 export const Card = ({ type, cardData }) => {
-  //console.log(type)
-  console.log(cardData);
-
-  // let planetimage = ["https://wallpaperaccess.com/full/1251069.jpg"];
-  // let chewbaccaimg = [
-  //   "https://static3.srcdn.com/wordpress/wp-content/uploads/2020/02/chewbacca-loreal-meme-Edited-1.jpg?q=50&fit=crop&w=480&h=300&dpr=1.5",
-  // ];
+  
 
   return (
     <div className="card" style={{ width: "18rem" }}>
