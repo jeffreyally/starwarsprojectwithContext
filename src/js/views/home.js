@@ -5,10 +5,6 @@ import "../../styles/home.css";
 import { Card } from "../component/card";
 //URL/API George said to use is here: https://swapi.dev/
 
-
-
-
-
 //two large collections of items means two arrays. Start with arrays and fetches
 //create reusable card component
 //map through arrays and render card for each
@@ -16,58 +12,38 @@ import { Card } from "../component/card";
 //home is landing page
 
 export const Home = () => {
+  const [arrayOfPlanets, setArrayOfPlanets] = useState([]);
+  const [arrayOfCharacters, setArrayOfCharacters] = useState([]);
 
-	const [arrayOfPlanets, setArrayOfPlanets] = useState([]);
-	const [arrayOfCharacters, setArrayOfCharacters] = useState([]);
+  useEffect(() => {
+    getData("https://swapi.dev/api/people/", setArrayOfCharacters);
+    getData("https://swapi.dev/api/planets/", setArrayOfPlanets);
+  }, []);
 
-	useEffect(() => {
-		getCharacters();
-		getPlanets();
-	}
-		, []);
-		
-	const getPlanets = () => {
-		
-		fetch("https://swapi.dev/api/planets")
-		.then((response) => {
-			//console.log(response)
-			return response.json();
-		})
-		.then((jsonresponse)=> {
-			
-			setArrayOfPlanets(jsonresponse.results)
-			
-			
-		})
-	}
+  function getData(url, setter) {
+    fetch(url)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        // console.log(data.results);
+        setter(data.results);
+      })
+      .catch((error) => {
+        console.log("Looks like there was a problem: \n", error);
+      });
+  }
 
-	const getCharacters = () => {
-		
-		fetch("https://swapi.dev/api/people/")
-		.then((response) => {
-			
-			return response.json();
-		})
-		.then((jsonresponse)=> {
-			
-			setArrayOfCharacters(jsonresponse.results)
-			
-			
-		})
-	}
+  //console.log(arrayOfCharacters)
+  //console.log (arrayOfPlanets)
 
-	//console.log(arrayOfCharacters)
-	//console.log (arrayOfPlanets)
-
-
-return(
-	<>
-	<h1>Characters</h1>
-	<Card type="Character" characters={arrayOfCharacters}/>
-	<br></br>
-	<h1>Planets</h1>
-	<Card type="Planet" planets={arrayOfPlanets}/>
-	
-	</>
-	);
+  return (
+    <>
+      <h1>Characters</h1>
+      <Card type="Character" characters={arrayOfCharacters} />
+      <br></br>
+      <h1>Planets</h1>
+      <Card type="Planet" planets={arrayOfPlanets} />
+    </>
+  );
 };
