@@ -6,8 +6,8 @@ import { Home } from "./views/home";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
-import {GetDetailsViewForCharacters} from "./views/getdetailsviewforcharacters.js";
-import { GetDetailsViewForPlanets } from "./views/getdetailsviewforplanets.js";
+import {DetailsView} from "./views/detailsview.js";
+
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
@@ -33,8 +33,8 @@ function Layout() {
 
 
 						<Route exact path="/single/:theid" component={Single} />
-						<Route exact path="/getdetailsviewforcharacters/:ID" component={GetDetailsViewForCharacters}/>
-						<Route exact path="/getdetailsviewforplanets/:ID" component={GetDetailsViewForPlanets}/>
+						<Route exact path="/detailsview/:theID" component={DetailsView}/>
+					
 
 						<Route>
 							<h1>Not found!</h1>

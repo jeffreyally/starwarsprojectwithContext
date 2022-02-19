@@ -32,7 +32,8 @@ export const Card = ({ type, cardData }) => {
         </p>
         <Link
           to={{
-            pathname: `getdetailsviewforcharacters/`,
+            pathname: `detailsview/${cardData.name}`,
+            state: cardData
           }}
         >
           <button className="btn btn-primary">Get Details</button>
