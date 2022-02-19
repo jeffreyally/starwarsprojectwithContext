@@ -2,10 +2,10 @@ import React, { useState, useEffect, useContext } from "react";
 import PropTypes, { array } from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
-
-export const Card = ({ type, characters, planets }) => {
+//ad state to linkpath
+export const Card = ({ type, character, planets }) => {
   //console.log(type)
-  //console.log(characters)
+  console.log(character)
   //console.log(planets)
   let planetimage = ["https://wallpaperaccess.com/full/1251069.jpg"];
   let chewbaccaimg = [
@@ -15,8 +15,8 @@ export const Card = ({ type, characters, planets }) => {
   return (
     <div className="flex">
       {type == "Character"
-        ? characters.map((item) => {
-            return (
+        ? 
+            
               <div className="card" style={{ width: "18rem" }}>
                 <img
                   className="card-img-top"
@@ -26,22 +26,22 @@ export const Card = ({ type, characters, planets }) => {
                 <div className="card-body">
                   <h5 className="card-title">{type}</h5>
                   <p className="card-text">
-                    <p>{item.name}</p>
+                    <p>{character.name}</p>
                   </p>
                   <Link
                     to={{
-                      pathname: `getdetailsviewforcharacters/${item.name}`,
-                      state: characters.concat(chewbaccaimg),
+                      pathname: `getdetailsviewforcharacters/`,
+                      
                     }}
                   >
                     <button className="btn btn-primary">Get Details</button>
                   </Link>
                 </div>
               </div>
-            );
-          })
+            
+          
         : null}
-      {type == "Planet"
+      {/* {type == "Planet"
         ? planets.map((item) => {
             
 
@@ -69,7 +69,7 @@ export const Card = ({ type, characters, planets }) => {
               </div>
             );
           })
-        : null}
+        : null} */}
     </div>
   );
 };

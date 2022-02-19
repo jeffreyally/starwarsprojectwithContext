@@ -40,7 +40,9 @@ export const Home = () => {
   return (
     <>
       <h1>Characters</h1>
-      <Card type="Character" characters={arrayOfCharacters} />
+	  {arrayOfCharacters.map((character,index)=> {
+
+     return <Card type="Character" character={character} key={index} />})}
       <br></br>
       <h1>Planets</h1>
       <Card type="Planet" planets={arrayOfPlanets} />
