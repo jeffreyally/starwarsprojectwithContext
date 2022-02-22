@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import PropTypes, { array } from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
-//ad state to linkpath
+
 export const Card = ({ type, cardData }) => {
   
 
@@ -30,8 +30,10 @@ export const Card = ({ type, cardData }) => {
             state: cardData
           }}
         >
-          <button className="btn btn-primary">Get Details</button>
+          <button className="btn btn-primary">Get Details</button><i className="far fa-heart"></i>
+
         </Link>
+        
       </div>
     </div>
   );

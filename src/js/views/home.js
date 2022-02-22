@@ -1,38 +1,35 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
-import "../../styles/home.css";
-import { Card } from "../component/card";
+import React, { useState, useEffect, useContext } from "react";
+import PropTypes from "prop-types";
+import { Link, useParams } from "react-router-dom";
+import { Context } from "../store/appContext";
+import {Card} from "../component/card.js"
 //URL/API George said to use is here: https://swapi.dev/
 
-//two large collections of items means two arrays. Start with arrays and fetches
-//create reusable card component
-//map through arrays and render card for each
 
-//home is landing page
 
 export const Home = () => {
-  const [arrayOfPlanets, setArrayOfPlanets] = useState([]);
-  const [arrayOfCharacters, setArrayOfCharacters] = useState([]);
+  const { store, actions } = useContext(Context);
+  // const [arrayOfPlanets, setArrayOfPlanets] = useState([]);
+  // const [arrayOfCharacters, setArrayOfCharacters] = useState([]);
 
   // useEffect(() => {
   //   getData("https://swapi.dev/api/people/", setArrayOfCharacters);
   //   getData("https://swapi.dev/api/planets/", setArrayOfPlanets);
   // }, []);
 
-  function getData(url, setter) {
-    fetch(url)
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        // console.log(data.results);
-        setter(data.results);
-      })
-      .catch((error) => {
-        console.log("Looks like there was a problem: \n", error);
-      });
-  }
+  // function getData(url, setter) {
+  //   fetch(url)
+  //     .then((response) => {
+  //       return response.json();
+  //     })
+  //     .then((data) => {
+  //       // console.log(data.results);
+  //       setter(data.results);
+  //     })
+  //     .catch((error) => {
+  //       console.log("Looks like there was a problem: \n", error);
+  //     });
+  // }
 
   //console.log(arrayOfCharacters)
   //console.log (arrayOfPlanets)
@@ -41,7 +38,7 @@ export const Home = () => {
     <>
       <h1>Characters</h1>
       <div className="flex">
-      {arrayOfCharacters.map((character, index) => {
+      {store.characters.map((character, index) => {
         return (
           <Card
             type="Character"
@@ -65,7 +62,7 @@ export const Home = () => {
       <br></br>
       <h1>Planets</h1>
       <div className="flex">
-      {arrayOfPlanets.map((planet, index) => {
+      {store.planets.map((planet, index) => {
         return (
           <Card
             type="Planet"
