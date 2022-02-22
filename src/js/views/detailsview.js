@@ -1,4 +1,5 @@
 import React from "react";
+import { Context } from "../store/appContext";
 
 export const DetailsView = (props) => {
   let obj = props.location.state

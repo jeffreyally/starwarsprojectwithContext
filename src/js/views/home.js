@@ -15,10 +15,10 @@ export const Home = () => {
   const [arrayOfPlanets, setArrayOfPlanets] = useState([]);
   const [arrayOfCharacters, setArrayOfCharacters] = useState([]);
 
-  useEffect(() => {
-    getData("https://swapi.dev/api/people/", setArrayOfCharacters);
-    getData("https://swapi.dev/api/planets/", setArrayOfPlanets);
-  }, []);
+  // useEffect(() => {
+  //   getData("https://swapi.dev/api/people/", setArrayOfCharacters);
+  //   getData("https://swapi.dev/api/planets/", setArrayOfPlanets);
+  // }, []);
 
   function getData(url, setter) {
     fetch(url)
