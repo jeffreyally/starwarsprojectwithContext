@@ -1,6 +1,9 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			favorites: [],
+			characters: [],
+			planets:[],
 			demo: [
 				{
 					title: "FIRST",
@@ -23,6 +26,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 				/**
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/
+				fetch("https://swapi.dev/api/people/")
+				.then((response) => {
+				  return response.json();
+				})
+				.then((data) => {
+				  // console.log(data.results);
+				  setStore({characters:data.results});
+				})
+				.catch((error) => {
+				  console.log("Looks like there was a problem: \n", error);
+				});
 			},
 			changeColor: (index, color) => {
 				//get the store
