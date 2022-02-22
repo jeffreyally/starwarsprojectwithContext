@@ -27,6 +27,7 @@ function Layout() {
 					
 					<Switch>
 						<Route exact path="/" component={Home} />
+						<Route exact path="/" component={DetailsView} />
 
 
 						<Route exact path="/demo" component={Demo} />
