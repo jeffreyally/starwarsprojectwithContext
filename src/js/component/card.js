@@ -3,8 +3,10 @@ import PropTypes, { array } from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
+//only copied this one import below along with line 14.
+
 export const Card = ({ type, cardData }) => {
-  
+  const { store, actions } = useContext(Context);
 
   return (
     <div className="card" style={{ width: "18rem" }}>
@@ -27,13 +29,19 @@ export const Card = ({ type, cardData }) => {
         <Link
           to={{
             pathname: `detailsview/${cardData.name}`,
-            state: cardData
+            state: cardData,
           }}
         >
-          <button className="btn btn-primary">Get Details</button><i className="far fa-heart"></i>
-
+          <button className="btn btn-primary">Get Details</button>
+          <i
+            className="far fa-heart"
+            onClick={() => {
+              
+              
+              actions.addToFavorites(cardData.name);
+            }}
+          ></i>
         </Link>
-        
       </div>
     </div>
   );

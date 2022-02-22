@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 
 export const DetailsView = (props) => {
   let obj = props.location.state
- console.log(obj)
+ 
   return(
 <>
 <div className="card m-1" >

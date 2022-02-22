@@ -69,7 +69,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
-			}
+			},
+			addToFavorites:(name)=>{
+				console.log(name)
+				const store = getStore();
+				store.favorites.push({name: name})
+				//console.log(store)
+				return setStore({store:store})
+
+
+			},
 		}
 	};
 };
