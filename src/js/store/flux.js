@@ -2,7 +2,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			favorites: [{
-				name:'one'
+				
 			}],
 			characters: [],
 			planets:[],
@@ -70,10 +70,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 				//reset the global store
 				setStore({ demo: demo });
 			},
-			addToFavorites:(name)=>{
-				console.log(name)
+			addToFavorites:(charactername)=>{
+				console.log(charactername)
 				const store = getStore();
-				store.favorites.push({name: name})
+				store.favorites.push({name: charactername})
 				//console.log(store)
 				return setStore({store:store})
 
