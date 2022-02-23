@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
+import PropTypes from "prop-types";
+import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
-import { Link } from "react-router-dom";
 
 export const DetailsView = (props) => {
   let obj = props.location.state;
-
+  const { store, actions } = useContext(Context);
   return (
     <>
       <div className="card m-1">
@@ -26,6 +27,14 @@ export const DetailsView = (props) => {
           </div>
         </div>
       </div>
+      <div className="detailsViewDivWith4Facts">
+      {store.characters.map((eachcharacter,index)=>{
+        //maybe return 4 divs with a p tag in each?
+        if(obj.name == eachcharacter.name ){ return <p key={index}>{eachcharacter.name}</p>}
+       
+      })}
+      </div>
+
     </>
   );
 };
