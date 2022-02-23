@@ -36,8 +36,8 @@ export const Home = () => {
 
   return (
     <>
-      <h1>Characters</h1>
-      <div className="flex">
+      <h1 className = 'm-2'>Characters</h1>
+      <div className="flex m-5">
       {store.characters.map((character, index) => {
         return (
           <Card
@@ -60,8 +60,8 @@ export const Home = () => {
       })}
      </div>
       <br></br>
-      <h1>Planets</h1>
-      <div className="flex">
+      <h1 className = 'm-2' >Planets</h1>
+      <div className="flex m-5">
       {store.planets.map((planet, index) => {
         return (
           <Card

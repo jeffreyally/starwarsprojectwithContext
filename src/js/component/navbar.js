@@ -17,6 +17,11 @@ export const Navbar = () => {
 	})}
   </ul>
   </span>
+  <br></br>
+  <br></br>
+  <br></br>
+  
 </div>
+
 	);
 };
