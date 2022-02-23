@@ -15,7 +15,7 @@ export const Card = ({ type, cardData }) => {
         src={cardData.imgURL}
         alt="Card image cap"
       />
-      <div className="card-body">
+      <div className="card-body" >
         <h5 className="card-title">{cardData.name}</h5>
         <p className="card-text">
           <span>{`${cardData.prop1}: ${cardData.value1}`}</span>
@@ -32,17 +32,29 @@ export const Card = ({ type, cardData }) => {
             state: cardData,
           }}
         >
-          <button className="btn btn-primary">Get Details</button>
-          <i
-            className="far fa-heart"
-            onClick={() => {
-              
-              
-              actions.addToFavorites(cardData.name);
-            }}
-          ></i>
+          <button className="btn btn-primary " >Get Details</button>
+       
         </Link>
+        <span class="fa-stack fa-2x" style={{marginLeft:'34%'}}>
+    <i class="fas fa-circle fa-stack-2x fa-inverse"></i>
+    <i class="fas fa-heart fa-stack-1x "></i>
+  </span>
       </div>
     </div>
   );
 };
+
+
+let g = `<span class="fa-stack fa-2x">
+<i class="fa-solid fa-circle fa-stack-2x"></i>
+<i class="fa-solid fa-flag fa-stack-1x fa-inverse"></i>
+</span>`
+
+let h = `   <i
+className="far fa-heart fa-2x"
+onClick={() => {
+  
+  
+  actions.addToFavorites(cardData.name);
+}}
+></i>`
