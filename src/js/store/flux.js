@@ -69,10 +69,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 				setStore({ demo: demo });
 			},
 			addToFavorites:(charactername)=>{
-				console.log(charactername)
+				
 				const store = getStore();
 				store.favorites.push({name: charactername})
-				//console.log(store)
+				if(store.favorites[0].name== '(empty)')
+				store.favorites.shift()
+				
 				return setStore({store:store})
 
 
