@@ -33,7 +33,7 @@ export const DetailsView = (props) => {
                   style={{
                     float: "right",
                     marginBottom: "10px",
-                    marginTop: "80px",
+                    marginTop: "200px",
                   }}
                 >
                   Home

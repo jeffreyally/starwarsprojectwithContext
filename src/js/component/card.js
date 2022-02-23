@@ -34,7 +34,7 @@ export const Card = ({ type, cardData }) => {
         >
           <button className="btn btn-primary ">More Info!</button>
         </Link>
-        <span className="fa-stack fa-2x" style={{ marginLeft: "34%" }}>
+        <span className="fa-stack fa-2x" style={{ marginLeft: "35%" }}>
           <i className="fas fa-circle fa-stack-2x fa-inverse"></i>
           <i
             className="fas fa-heart fa-stack-1x "
