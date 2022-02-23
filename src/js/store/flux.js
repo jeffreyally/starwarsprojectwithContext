@@ -72,13 +72,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 				
 				const store = getStore();
 				store.favorites.push({name: charactername})
-				if(store.favorites[0].name== '(empty)')
-				store.favorites.shift()
+				if(store.favorites[0].name== '(empty)') {store.favorites.shift()}
 				
 				return setStore({store:store})
 
 
 			},
+
+			deleteAFavorite: (index) => {
+				const store = getStore();
+				store.favorites.splice(index,1)
+				return setStore({store:store})
+			}
 		}
 	};
 };
