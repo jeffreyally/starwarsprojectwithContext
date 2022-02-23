@@ -34,10 +34,10 @@ export const Card = ({ type, cardData }) => {
         >
           <button className="btn btn-primary ">Get Details</button>
         </Link>
-        <span class="fa-stack fa-2x" style={{ marginLeft: "34%" }}>
-          <i class="fas fa-circle fa-stack-2x fa-inverse"></i>
+        <span className="fa-stack fa-2x" style={{ marginLeft: "34%" }}>
+          <i className="fas fa-circle fa-stack-2x fa-inverse"></i>
           <i
-            class="fas fa-heart fa-stack-1x "
+            className="fas fa-heart fa-stack-1x "
             onClick={() => {
               actions.addToFavorites(cardData.name);
             }}
