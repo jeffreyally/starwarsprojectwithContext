@@ -8,9 +8,10 @@ export const Navbar = () => {
 	return (
     <>
     
-		<div className="dropdown">
-    <img className="navbarlogotopleft" src={starwarslogo}/>
-      <span className="spanAroundFavoritesList">
+		<div className="dropdown d-flex justify-content-between">
+      <div><img className="navbarlogotopleft" src={starwarslogo}/></div>
+    
+      <div className="divAroundFavoritesList">
   <button className="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
     Favorites List
   </button>
@@ -19,7 +20,7 @@ export const Navbar = () => {
 		return <li>{fav.name}</li>
 	})}
   </ul>
-  </span>
+  </div>
   <br></br>
   <br></br>
   <br></br>
