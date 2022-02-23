@@ -36,6 +36,19 @@
 }
 
 .detailsViewDivWith4Facts{
+  margin-top: 3%;
   display:flex;
   justify-content: space-around;
+  color:red;
+  font-family: Circular-Loom;
+  font-size: 1vw;
+  
+}
+
+
+.redline{
+  border-bottom: 3px solid red;
+  margin-top: 3%;
+  width:90%;
+  margin: 3% 0 5% 5%;
 }

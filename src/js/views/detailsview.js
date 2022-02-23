@@ -43,6 +43,7 @@ export const DetailsView = (props) => {
           </div>
         </div>
       </div>
+      <div className="redline"></div>
       <div className="detailsViewDivWith4Facts">
         {store.characters.map((eachcharacter, index) => {
           if (obj.name == eachcharacter.name) {
@@ -50,16 +51,16 @@ export const DetailsView = (props) => {
             return (
               <>
                 <div key={index}>
-                  <p key={index}>Birth Year: {eachcharacter.birth_year}</p>
+                  <p key={index}>Birth Year: <br></br><br></br>{eachcharacter.birth_year}</p>
                 </div>
                 <div>
-                  <p key={index}>Eye Color: {eachcharacter.eye_color}</p>
+                  <p key={index}>Eye Color:<br></br><br></br> {eachcharacter.eye_color}</p>
                 </div>
                 <div>
-                  <p key={index}>Height: {eachcharacter.height}</p>
+                  <p key={index}>Height:<br></br><br></br> {eachcharacter.height}</p>
                 </div>
                 <div>
-                  <p key={index}>Mass: {eachcharacter.mass}</p>
+                  <p key={index}>Mass: <br></br><br></br>{eachcharacter.mass}</p>
                 </div>
               </>
             );
@@ -74,16 +75,16 @@ export const DetailsView = (props) => {
             return (
               <>
                 <div key={index}>
-                  <p key={index}>Climate: {eachplanet.climate}</p>
+                  <p key={index}>Climate: <br></br><br></br>{eachplanet.climate}</p>
                 </div>
                 <div>
-                  <p key={index}>Gravity: {eachplanet.gravity}</p>
+                  <p key={index}>Gravity: <br></br><br></br>{eachplanet.gravity}</p>
                 </div>
                 <div>
-                  <p key={index}>Population: {eachplanet.population}</p>
+                  <p key={index}>Population:<br></br><br></br> {eachplanet.population}</p>
                 </div>
                 <div>
-                  <p key={index}>Diameter: {eachplanet.diameter}</p>
+                  <p key={index}>Diameter:<br></br><br></br> {eachplanet.diameter}</p>
                 </div>
               </>
             );
