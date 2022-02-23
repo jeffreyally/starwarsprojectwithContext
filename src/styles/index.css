@@ -34,3 +34,8 @@
 .favoritelistLIs{
   display:flex;
 }
+
+.detailsViewDivWith4Facts{
+  display:flex;
+  justify-content: space-around;
+}

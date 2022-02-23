@@ -15,30 +15,61 @@ export const DetailsView = (props) => {
           </div>
           <div className="col-md-8">
             <div className="card-body">
-              <h5 className="card-title" style={{textAlign:'center'}}>{obj.name}</h5>
+              <h5 className="card-title" style={{ textAlign: "center" }}>
+                {obj.name}
+              </h5>
               <p className="card-text">
-              
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum."
               </p>
               <Link to="/">
-              <button className="btn btn-primary" style={{float:'right' ,marginBottom:'10px' ,marginTop:'80px'}}>Home</button>
+                <button
+                  className="btn btn-primary"
+                  style={{
+                    float: "right",
+                    marginBottom: "10px",
+                    marginTop: "80px",
+                  }}
+                >
+                  Home
+                </button>
               </Link>
             </div>
           </div>
         </div>
       </div>
       <div className="detailsViewDivWith4Facts">
-      {store.characters.map((eachcharacter,index)=>{
-        //maybe return 4 divs with a p tag in each?
-        if(obj.name == eachcharacter.name ){ return <p key={index}>{eachcharacter.name}</p>}
-       
-      })}
+        {store.characters.map((eachcharacter, index) => {
+          //maybe return 4 divs with a p tag in each?
+          console.log(eachcharacter);
+          if (obj.name == eachcharacter.name) {
+            return (
+              <>
+                <div key={index}>
+                  <p key={index}>Birth Year: {eachcharacter.birth_year}</p>
+                </div>
+                <div>
+                  <p key={index}>Eye Color: {eachcharacter.eye_color}</p>
+                </div>
+                <div>
+                  <p key={index}>Height: {eachcharacter.height}</p>
+                </div>
+                <div>
+                  <p key={index}>Mass: {eachcharacter.mass}</p>
+                </div>
+              </>
+            );
+          }
+        })}
       </div>
-
     </>
   );
 };
-
 
 // let threefacts = <span>{`${obj.prop1}: ${obj.value1}`}</span>
 // <br></br>
