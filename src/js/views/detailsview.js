@@ -45,9 +45,8 @@ export const DetailsView = (props) => {
       </div>
       <div className="detailsViewDivWith4Facts">
         {store.characters.map((eachcharacter, index) => {
-          //maybe return 4 divs with a p tag in each?
-          console.log(eachcharacter);
           if (obj.name == eachcharacter.name) {
+            console.log(eachcharacter)
             return (
               <>
                 <div key={index}>
@@ -66,15 +65,33 @@ export const DetailsView = (props) => {
             );
           }
         })}
+
+        {store.planets.map((eachplanet, index) => {
+          //maybe return 4 divs with a p tag in each?
+
+          if (obj.name == eachplanet.name) {
+            console.log(eachplanet);
+            return (
+              <>
+                <div key={index}>
+                  <p key={index}>Climate: {eachplanet.climate}</p>
+                </div>
+                <div>
+                  <p key={index}>Gravity: {eachplanet.gravity}</p>
+                </div>
+                <div>
+                  <p key={index}>Population: {eachplanet.population}</p>
+                </div>
+                <div>
+                  <p key={index}>Diameter: {eachplanet.diameter}</p>
+                </div>
+              </>
+            );
+          }
+        })}
       </div>
     </>
   );
 };
 
-// let threefacts = <span>{`${obj.prop1}: ${obj.value1}`}</span>
-// <br></br>
-// <span>
-//   {`${obj.prop2}: ${obj.value2}`}
-//   <br></br>
-// </span>
-// {`${obj.prop3}: ${obj.value3}`}
+
