@@ -20,6 +20,10 @@
  
   
 }
-
+.navbarlogotopleft{
+  object-fit: fill;
+  height: 150px;
+  width:150px;
+}
 
 
