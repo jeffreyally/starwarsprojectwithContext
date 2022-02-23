@@ -71,7 +71,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			addToFavorites:(charactername)=>{
 				
 				const store = getStore();
+				
 				store.favorites.push({name: charactername})
+				
 				if(store.favorites[0].name== '(empty)') {store.favorites.shift()}
 				
 				return setStore({store:store})
@@ -82,6 +84,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			deleteAFavorite: (index) => {
 				const store = getStore();
 				store.favorites.splice(index,1)
+				if(store.favorites.length == 0){store.favorites.push({name:'(empty)'})}
 				return setStore({store:store})
 			}
 		}
